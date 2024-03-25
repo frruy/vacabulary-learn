@@ -11,8 +11,6 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProviders
 import com.duyphung.engvocalearn.databinding.ActivityMainBinding
 import com.duyphung.engvocalearn.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -40,7 +38,7 @@ class MainActivity : AppCompatActivity() {
                 .setAction("Action", null).show()
         }
 
-        viewModel.word.observe(this) { data ->
+        viewModel.wordLiveData.observe(this) { data ->
             // Use the data here
             Log.d("", "onCreate: $data")
         }

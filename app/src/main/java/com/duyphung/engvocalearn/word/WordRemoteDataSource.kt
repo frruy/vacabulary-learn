@@ -5,6 +5,6 @@ import com.duyphung.engvocalearn.data.retrofit.WordService
 import javax.inject.Inject
 
 class WordRemoteDataSource @Inject constructor(private val service: WordService) : BaseDataSource() {
-    suspend fun getWord() = getResult { service.getWord() }
+    suspend fun getWord(word: String) = getResult { service.getWord(word) }
 
 }

@@ -9,5 +9,5 @@ data class Meaning(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
     var partOfSpeech: String,
-    val wordId: Int,
+    val wordId: Long,
 )

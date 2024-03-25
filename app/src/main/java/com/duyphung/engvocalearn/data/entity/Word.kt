@@ -9,6 +9,6 @@ data class Word(
     val id: Long = 0,
     val audio: String?,
     val text: String?,
-    var isSaved: Boolean,
+    var isSaved: Boolean = true,
     var createdAt: Long = System.currentTimeMillis(),
 )

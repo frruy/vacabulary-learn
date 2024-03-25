@@ -4,12 +4,24 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Update
+import com.duyphung.engvocalearn.data.entity.Definition
+import com.duyphung.engvocalearn.data.entity.Meaning
+import com.duyphung.engvocalearn.data.entity.Review
 import com.duyphung.engvocalearn.data.entity.Word
 
 @Dao
 interface WordDao {
     @Insert
-    fun insertWord(word: Word)
+    suspend fun insertWord(word: Word): Long
+
+    @Insert
+    suspend fun insertReview(review: Review): Long
+
+    @Insert
+    suspend fun insertMeaning(meaning: Meaning): Long
+
+    @Insert
+    suspend fun insertDefinition(definition: Definition): kotlin.Long
 
     @Update
     fun updateWord(word: Word)

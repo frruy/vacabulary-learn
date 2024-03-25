@@ -3,12 +3,13 @@ package com.duyphung.engvocalearn.data.retrofit
 import com.duyphung.engvocalearn.data.retrofit.response.WordRes
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 
 interface WordService {
-    @GET("hello")
-    suspend fun getWord(): Response<WordRes>
+    @GET("{word}")
+    suspend fun getWord(@Path("word") word: String): Response<WordRes>
 
 //    @GET("filter.php?")
 //    fun getMealsByCategory(@Query("i") category:String):Call<MealsResponse>
